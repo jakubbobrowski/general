@@ -1,16 +1,3 @@
-/*
-This code calculates the saturation temperature as a function of vapour partial pressure for multiphase flows with Species 
-Transport in Ansys Fluent. The User-Defined Function transforms the water vapour mass fraction to mole fraction and calculates
-the vapour partial pressure. Based on the vapour pressure and the pressure within the liquid film, the UDF utilises the Antoine
-equation to compute and return the saturation temperature. These operations are executed in each finite volume. Additionally, the
- UDF transfers several contour maps to the Fluent graphical user interface. Two assumptions were made. To enhance solution
-stability, variations in mixture pressure were neglected. Instead, the absolute mixture pressure was equated to the constant
-operating pressure. This assumption holds true for low gauge pressure conditions. Furthermore, water pressure used in the Antoine 
-equation was assumed to vary linearly with water volume fraction, ranging from vapor partial pressure in the gas phase to the 
-operating pressure in the liquid phase. This approach guarantees a smoother transition across the interface and increases solution 
-stability.
-*/
-
 #include "udf.h"
 
 #define M_vapour 18.0152 // kg/kmol
