@@ -1,13 +1,14 @@
 /*
-This code calculates the saturation temperature as a function of vapour partial pressure for multiphase flows with Species Transport in Ansys Fluent. 
-The User-Defined Function transforms the water vapor mass fraction to mole fraction and calculates the vapor partial pressure. Based on the vapor 
-pressure and the pressure within the liquid film, the UDF utilizes the Antoine equation to compute and return the saturation temperature.
-These operations are executed in each finite volume. Additionally, the UDF transfers several contour maps to the Fluent graphical user interface. 
-Two assumptions were made. To enhance solution stability, variations in mixture pressure were neglected. Instead, the absolute mixture pressure was 
-equated to the constant operating pressure. This assumption does not compromise accuracy since gauge pressure constitutes less than 0.01% of the absolute 
-pressure. Furthermore, water pressure used in the Antoine equation was assumed to vary linearly with water volume fraction, ranging from vapor partial 
-pressure in the gas phase to the operating pressure in the liquid phase. This approach guarantees a smoother transition across the interface and increases 
-solution stability.
+This code calculates the saturation temperature as a function of vapour partial pressure for multiphase flows with Species 
+Transport in Ansys Fluent. The User-Defined Function transforms the water vapor mass fraction to mole fraction and calculates
+the vapor partial pressure. Based on the vapor pressure and the pressure within the liquid film, the UDF utilizes the Antoine
+equation to compute and return the saturation temperature.These operations are executed in each finite volume. Additionally, 
+the UDF transfers several contour maps to the Fluent graphical user interface. Two assumptions were made. To enhance solution
+stability, variations in mixture pressure were neglected. Instead, the absolute mixture pressure was equated to the constant
+operating pressure. This assumption does not compromise accuracy since gauge pressure constitutes less than 0.01% of the 
+absolute pressure. Furthermore, water pressure used in the Antoine equation was assumed to vary linearly with water volume 
+fraction, ranging from vapor partial pressure in the gas phase to the operating pressure in the liquid phase. This approach
+guarantees a smoother transition across the interface and increases solution stability.
 */
 
 #include "udf.h"
